@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM Example</title>
+  </head>
+  <body>
+    <h1 id="myHeader">Hello World</h1>
+    <p class="myClass">This is a paragraph.</p>
+    <script>
+       // เข้าถึงองค์ประกอบด้วย getElementById
+       let header = document.getElementById("myHeader");
+       // เปลียนแปลงเน ือหา
+       header.innerText = "Hello JavaScript";
+       // เปลียนแปลงแอตทริบิวต์
+       header.setAttribute("class", "headerClass");
+       // เปลียนแปลงสไตล์
+       header.style.color = "blue";
+       header.style.fontSize = "24px";
+    </script>
+  </body>
+</html>

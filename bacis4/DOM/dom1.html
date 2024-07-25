@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM Example</title>
+  </head>
+  <body>
+    <h1 id="myHeader">Hello World</h1>
+    <p class="myClass">This is a paragraph.</p>
+    <div>
+      <p>This is another paragraph.</p>
+    </div>
+    <img src="example.png" alt="Example Image" width="100" height="100" />
+    <script>
+       // เข้าถึงองค์ประกอบด้วย getElementById
+       let header = document.getElementById("myHeader");
+       console.log(header.innerText); // Output: Hello World
+       // เข้าถึงองค์ประกอบด้วย getElementsByClassName
+       let paragraphs = document.getElementsByClassName("myClass");
+       console.log(paragraphs[0].innerText); // Output: This is a paragraph.
+       // เข้าถึงองค์ประกอบด้วย getElementsByTagName
+       let allParagraphs = document.getElementsByTagName("p");
+       console.log(allParagraphs[1].innerText); // Output: This is another paragraph.
+       // เข้าถึงองค์ประกอบด้วย querySelector
+       let firstParagraph = document.querySelector("p");
+       console.log(firstParagraph.innerText); // Output: This is a paragraph.
+       // เข้าถึงองค์ประกอบด้วย querySelectorAll
+       let allPs = document.querySelectorAll("p");
+       console.log(allPs[1].innerText); // Output: This is another paragraph.
+    </script>
+  </body>
+</html>

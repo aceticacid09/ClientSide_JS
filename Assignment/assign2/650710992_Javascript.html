@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      function welcomeAlert() {
+        alert("Welcome to Assignment 2");
+      }
+
+      function confirmInput() {
+        inputID = document.forms[0].inputID.value;
+        alert("Welcome back! " + inputID);
+      }
+
+      function resetInput() {
+        alert("Input field has been reset!");
+      }
+
+      function mousePos(p) {
+        x = p.clientX;
+        y = p.clientY;
+        coor = "Pointer coordinate: (" + x + "," + y + ")";
+        document.getElementById("resultC").innerHTML = coor;
+      }
+
+      function clearPos() {
+        document.getElementById("resultC").innerHTML = "Pointer coordinate:";
+      }
+
+      function whichButton(event) {
+        switch (event.button) {
+          case 0:
+            ans = "You pressed <b>LEFT</b> mouse button";
+            document.getElementById("resultM").innerHTML = ans;
+            break;
+          case 1:
+            ans = "You pressed <b>MIDDLE</b> mouse button";
+            document.getElementById("resultM").innerHTML = ans;
+            break;
+          case 2:
+            ans = "You pressed <b>RIGHT</b> mouse button";
+            document.getElementById("resultM").innerHTML = ans;
+            break;
+        }
+      }
+
+      function displayDate() {
+        date = new Date();
+        time = date.toLocaleTimeString();
+        document.getElementById("time").innerHTML = time;
+        document.getElementById("time").style.fontWeight = "bold";
+        document.getElementById("time").style.fontSize = "20px";
+        document.getElementById("time").style.color = "coral";
+      }
+    </script>
+  </head>
+
+  <body onload="welcomeAlert()">
+    <center>
+      <table style="size: 100%">
+        <tr>
+          <td>
+            <h1>Login by student ID</h1>
+            <form onsubmit="confirmInput()" onreset="resetInput()">
+              Enter your student ID: <input id="inputID" type="text" />
+              <input type="submit" />
+              <input type="reset" />
+            </form>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <h1>Mouse button tester</h1>
+            <center>
+              <p id="resultC">Pointer coordinate:</p>
+              <p id="resultM">You pressed ___ mouse button</p>
+            </center>
+
+            <div
+              id="position"
+              onmousemove="mousePos(event)"
+              onmouseout="clearPos()"
+              onmousedown="whichButton(event)"
+              style="width: 450px; height: 250px; border: lightblue 4px dashed"
+            ></div>
+            <center><h3>Click in the blue box</h3></center>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <h1>What time is it?</h1>
+            <center>
+              <p id="time">It's now?</p>
+              <button type="button" onclick="displayDate()">Check now</button>
+            </center>
+          </td>
+        </tr>
+      </table>
+    </center>
+  </body>
+
+  <style>
+    td {
+      border: 2px double black;
+      padding: 50px;
+    }
+  </style>
+</html>
