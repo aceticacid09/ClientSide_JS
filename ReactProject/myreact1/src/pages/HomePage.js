@@ -16,7 +16,7 @@ const HomePage = () => {
 
   return (
     <div>
-      <h1>New Arrivals</h1>
+      <h1>Prompoj Kongmanakiattikun 650710992</h1>
       <Row>
         {newBooks.map((book) => (
           <Col key={book.id} sm={6} md={4} lg={3}>
